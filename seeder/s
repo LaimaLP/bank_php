@@ -1,0 +1,48 @@
+<?php
+echo "seeder started\n";
+$users = [
+    [
+        "id" => 0,
+        "name" => "Antanas",
+        "lastName" => "Jonaitis",
+        "number" => "LT601010010000000000",
+        "personalCode" => "49305311112",
+        "balance" => 16,
+    ],
+    [
+        "id" => 1,
+        "name" => "Petras",
+        "lastName" => "Antaninis",
+        "number" => "LT601010010000000001",
+        "personalCode" => "49305322222",
+        "balance" => 516,
+    ],
+    [
+        "id" => 2,
+        "name" => "Jonas",
+        "lastName" => "Petrainis",
+        "number" => "LT601010010000000002",
+        "personalCode" => "49305333333",
+        "balance" => 432.5,
+    ],
+    [
+        "id" => 3,
+        "name" => "Jonas",
+        "lastName" => "Jonaitis",
+        "number" => "LT6010100100000000003",
+        "personalCode" => "49305344444",
+        "balance" => 200000100,
+    ],
+    [
+        "id" => 4,
+        "name" => "Petras",
+        "lastName" => "Petrinis",
+        "number" => "LT6010100100000000004",
+        "personalCode" => "49305555555",
+        "balance" => 53218,
+    ],
+
+
+];
+file_put_contents(__DIR__ . '/../seederdata/user.ser', serialize($users));
+echo "seeder finished\n";
