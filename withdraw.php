@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1> Headeris: meniu su nuorodomis </h1>
-    <h1>Nuskaiciuoti lesas </h1>
+    <h1>Withdraw </h1>
     <p> Name: ... </p>
     <p> Last Name: ... </p>
     <p> Saskaitos Likutis: ... </p>

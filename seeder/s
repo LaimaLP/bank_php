@@ -44,5 +44,6 @@ $users = [
 
 
 ];
-file_put_contents(__DIR__ . '/../seederdata/user.ser', serialize($users));
+file_put_contents(__DIR__.'/../data/users.ser', serialize($users));
+
 echo "seeder finished\n";
