@@ -1,0 +1,30 @@
+.accountForm{
+    display:flex; 
+    flex-direction:column; 
+    align-items:center; 
+    justify-content:center; 
+    gap:10px; 
+    text-align:left;
+}
+.accountInput{
+    display:flex; 
+    flex-direction:column; 
+    align-items:flex-start; 
+    gap:10px;
+}
+
+.accountTable{
+    margin: auto;
+    text-align: center;
+background-color: rgb(224, 250, 241);
+color:rgb(2, 2, 2);
+width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+thead{
+    font-weight: 700;
+    background-color: rgb(91, 93, 226)
+}

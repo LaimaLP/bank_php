@@ -1,29 +1,59 @@
 <?php
 require __DIR__ . '../menu.php';
+require __DIR__ . '../functions.php';
+
+$getUsers = file_get_contents(__DIR__ . '/data/users.ser');
+$usersData = unserialize($getUsers);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add money </title>
+    <link rel="stylesheet" href="style.css">
+    <title>Accounts List </title>
 </head>
+
 <body>
-<?= $menu ?>
+    <?= $menu ?>
 
-    <h1> Headeris: meniu su nuorodomis </h1>
-    <h1>Accounts List</h1>
+    <h1>Accounts List </h1>
 
-    
-    <p> Name: ... </p>
-    <p> Last Name: ... </p>
-    <p> Saskaitos Likutis: ... </p>
-    <form action="" method="post">
-        <button type="submit">Delete</button>
-    </form>
-    <a href="/addMoney.php">Go Add Money page</a>
-    <a href="/RemoveMoney.php">Go Remove Money page</a>
+    <?php
+    echo "    <table class='accountTable'>
+<thead class='labas'>
+    <tr>
+        <td>Owner</td>
+        <td>Personal code</td>
+        <td>Account number</td>
+        <td>Balance</td>
+        <td>Add</td>
+        <td>Debit</td>
+        <td>Delete</td>
 
+    </tr>
+</thead>
+<tbody>";
+
+    foreach ($usersData as $userBlock) {
+        $userId = $userBlock['id'];
+        echo "<tr>
+                <td>{$userBlock['name']} {$userBlock['lastName']}</td>
+                <td>{$userBlock['personalCode']}</td>
+                <td>{$userBlock['number']}</td>
+                <td>{$userBlock['balance']}</td>
+                <td> <a href='http://localhost/bank_php/addMoney.php/?userId=$userId'>Add</a> </td>
+                <td><a href='http://localhost/bank_php/withdraw.php'>Debit</a>  </td>
+                <td> <a href='#'>Delete</a></td>
+            </tr>";
+    }
+
+    echo "</tbody>
+    </table>";
+    ?>
 </body>
+
 </html>

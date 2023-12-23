@@ -1,12 +1,16 @@
+<?php
+require __DIR__ . '../menu.php';
+// call function reduce
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add money </title>
+    <title>Withdraw </title>
 </head>
 <body>
-    <h1> Headeris: meniu su nuorodomis </h1>
+<?= $menu ?>
     <h1>Withdraw </h1>
     <p> Name: ... </p>
     <p> Last Name: ... </p>
