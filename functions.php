@@ -9,7 +9,7 @@ function createAccount(): void
     $usersData[] = [
         "id" => 45, //AUTO paskaiciuot!!!!!,
         "name" => "xxxxxxx",
-        "lastName" => "xxxxxx",
+        "lastname" => "xxxxxx",
         "number" => "xxxxxxx",
         "personalCode" => "xxxxx",
         "balance" => 111111,

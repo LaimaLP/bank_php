@@ -41,7 +41,7 @@ $usersData = unserialize($getUsers);
     foreach ($usersData as $userBlock) {
         $userId = $userBlock['id'];
         echo "<tr>
-                <td>{$userBlock['name']} {$userBlock['lastName']}</td>
+                <td>{$userBlock['name']} {$userBlock['lastname']}</td>
                 <td>{$userBlock['personalCode']}</td>
                 <td>{$userBlock['number']}</td>
                 <td>{$userBlock['balance']}</td>

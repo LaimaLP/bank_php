@@ -1,16 +1,16 @@
 <?php
-// veiksmo failas, nieko nerodo, daro
-$id = rand(1, 100);
-$name = $_POST['name'] ?? 0; //amount ateina is posto
-$lastName = $_POST['lastname'] ?? 0; //amount ateina is posto
-$number = $_POST['IBAN'] ?? 0; //amount ateina is posto
-$personalCode = $_POST['PC'] ?? 0; //amount ateina is posto
+
+$id = rand(1000, 9999);
+$name = $_POST['name'] ?? 0; 
+$lastname = $_POST['lastname'] ?? 0; 
+$number = $_POST['IBAN'] ?? 0; 
+$personalCode = $_POST['PC'] ?? 0; 
 
 $users = unserialize(file_get_contents(__DIR__ . '/data/users.ser'));
 $users[] = [
     'id'=> $id, 
     'name'=> $name,
-    'lastName'=> $lastName,
+    'lastname'=> $lastname,
     'number'=> $number,
     'personalCode'=> $personalCode,
     'balance' => 0,

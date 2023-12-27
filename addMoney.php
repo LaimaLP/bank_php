@@ -16,7 +16,7 @@ foreach ($usersData as $userItem) {
    
 
 }
-addMoney($user['id'], 300)
+// addMoney($user['id'], 300)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@ addMoney($user['id'], 300)
     <!--  Name: $user['name']-->
     <?php if($user): ?>
     <p> <b>Name: </b> <?= $user['name'] ?> </p>
-    <p> <b>Last Name: </b> <?= $user['lastName'] ?> </p>
+    <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
     <p> <b> Saskaitos likutis: </b> <?= $user['balance'] ?> €.</p>
     <form action="" method="post">
         <input type="text" name="addMoney" placeholder="1000">

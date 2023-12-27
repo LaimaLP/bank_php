@@ -1,0 +1,15 @@
+<?php
+
+echo "seeder started\n";
+
+$newUsers = [
+    [
+        'name' => 'Adam',
+        'email' => 'adam@gmail.com',
+        'password' => sha1('123'),
+    ],
+
+];
+file_put_contents(__DIR__.'/../data/newUsers.ser', serialize($newUsers));
+
+echo "seeder finished\n";
