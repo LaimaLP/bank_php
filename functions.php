@@ -7,14 +7,14 @@ function createAccount(): void
     $usersData = unserialize($getUsers);
 
     $usersData[] = [
-        "id" => 45,//AUTO paskaiciuot!!!!!,
+        "id" => 45, //AUTO paskaiciuot!!!!!,
         "name" => "xxxxxxx",
         "lastName" => "xxxxxx",
         "number" => "xxxxxxx",
         "personalCode" => "xxxxx",
         "balance" => 111111,
     ];
-    
+
     // $ser = serialize($usersData);
     // file_put_contents(__DIR__.'../data/users.ser', $ser);
 }
@@ -24,13 +24,15 @@ function addMoney($id, $amount): void
     $getUsers = file_get_contents(__DIR__ . '/data/users.ser');
     $usersData = unserialize($getUsers);
 
-    foreach ($usersData as $user) {
+    foreach ($usersData as $userItem) {
+        if ($userItem['id'] == $id) {
+            $userItem['balance'] =  $userItem['balance'] + $amount;
+        }
         // user [balance] = new balance after add
     }
-    
-    $ser = serialize($usersData);
-    file_put_contents(__DIR__.'../data/users.ser', $ser);
 
+    $ser = serialize($usersData);
+    file_put_contents(__DIR__ . '../data/users.ser', $ser);
 
     //then redirect to main page
 }
@@ -44,9 +46,9 @@ function reduceMoney($id, $amount): void
         //if ...... atrasti ta user kur ID
         // user balance = new
     }
-    
+
     $ser = serialize($usersData);
-    file_put_contents(__DIR__.'../data/users.ser', $ser);
+    file_put_contents(__DIR__ . '../data/users.ser', $ser);
 
 
     //then redirect to main page

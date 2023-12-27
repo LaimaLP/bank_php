@@ -1,23 +1,22 @@
 <?php
 require __DIR__ . '../menu.php';
+require __DIR__ . '../functions.php';
+
 $user=[];
-if ($_GET['userId'] || $_GET['userId']==0) {
+if ($_GET['id'] || $_GET['id']==0) {
 
     $getUsers = file_get_contents(__DIR__ . '/data/users.ser');
     $usersData = unserialize($getUsers);
  
 foreach ($usersData as $userItem) {
-     if($userItem['id']==$_GET['userId']){
+     if($userItem['id'] == $_GET['id']){
         $user=$userItem;
      }
 }
    
-    //Susirasti Usery is $usersData
-
-    // $user = tas issitrauktas
 
 }
-//call function addMoney
+addMoney($user['id'], 300)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,15 +27,15 @@ foreach ($usersData as $userItem) {
     <title>Add money </title>
 </head>
 <body>
-<?= $menu ?>
 
+<?= $menu ?>
 
     <h1>Prideti lesas </h1>
     <!--  Name: $user['name']-->
     <?php if($user): ?>
-    <p> Name: <?= $user['name'] ?> </p>
-    <p> Last Name: <?= $user['lastName'] ?> </p>
-    <p> Saskaitos Likutis: <?= $user['balance'] ?> </p>
+    <p> <b>Name: </b> <?= $user['name'] ?> </p>
+    <p> <b>Last Name: </b> <?= $user['lastName'] ?> </p>
+    <p> <b> Saskaitos likutis: </b> <?= $user['balance'] ?> €.</p>
     <form action="" method="post">
         <input type="text" name="addMoney" placeholder="1000">
         <button type="submit">Add money</button>

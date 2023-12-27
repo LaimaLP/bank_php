@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <?= $menu ?>
  
-    <form class="accountForm" action="addNewAccount" method="post">
+    <form class="accountForm" action="http://localhost/bank_php/store.php" method="post">
     <h2>Create New Account </h2>
     <div class="accountInput">
         <label for="name">First Name:</label>
