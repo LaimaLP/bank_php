@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require __DIR__ . '../menu.php';
 require __DIR__ . '../functions.php';
 
@@ -34,9 +36,9 @@ foreach ($usersData as $userItem) {
     <p> <b>Name: </b> <?= $user['name'] ?> </p>
     <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
     <p> <b> Saskaitos likutis: </b> <?= $user['balance'] ?> €.</p>
-    <form action="" method="post">
-        <input type="text" name="addMoney" placeholder="1000">
-        <button type="submit">Add money</button>
+    <form action="http://localhost/bank_php/updateDebit.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
+        <input type="text" name="debitMoney">
+        <button type="submit">Debit money</button>
     </form>
     <?php endif ?>
 </body>

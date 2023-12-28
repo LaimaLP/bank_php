@@ -1,4 +1,5 @@
 <?php
+session_start();
 // require __DIR__ . '../functions.php';
 
 $user=[];
@@ -23,11 +24,15 @@ foreach ($usersData as $userItem) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="http://localhost/bank_php/script.js" defer></script>
+
     <title>Add money </title>
 </head>
 <body>
 
 <?= require __DIR__ . '/menu.php'?>
+<?php require __DIR__ . '/msg.php' ?>
+
 
     <h1>Prideti lesas </h1>
     <!--  Name: $user['name']-->
@@ -35,8 +40,8 @@ foreach ($usersData as $userItem) {
     <p> <b>Name: </b> <?= $user['name'] ?> </p>
     <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
     <p> <b> Saskaitos likutis: </b> <?= $user['balance'] ?> €.</p>
-    <form action="" method="post">
-        <input type="text" name="addMoney" placeholder="1000">
+    <form action="http://localhost/bank_php/update.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
+        <input type="text" name="addMoney">
         <button type="submit">Add money</button>
     </form>
     <?php endif ?>

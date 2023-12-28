@@ -1,6 +1,6 @@
 <?php
+session_start();
 require __DIR__ . '../functions.php';
-session_start(); //jei prisijuges, neturi rodyti login psl, uzdedama salyga
 if ($_SESSION['login'] !== 'logIn') {
     header('Location: http://localhost/bank_php/auth/login.php');
     die;
@@ -14,11 +14,15 @@ if ($_SESSION['login'] !== 'logIn') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="http://localhost/bank_php/script.js" defer></script>
+    
     <title>Read</title>
 </head>
 
 <body>
     <?= require __DIR__ . '/menu.php'?>
+    <?php require __DIR__ . '/msg.php' ?>
+
 
     <div class="container mt-5">
         <div class="row">
@@ -52,28 +56,29 @@ if ($_SESSION['login'] !== 'logIn') {
                 </div>
             </div>
         </li>
-        <?php $getUsers = file_get_contents(__DIR__ . '/data/users.ser');
-        $usersData = unserialize($getUsers); ?>
-        <?php foreach ($usersData as $userBlock) : ?>
+        <?php $members = unserialize(file_get_contents(__DIR__.'/data/users.ser')) ?>
+
+
+        <?php foreach ($members as $member) : ?>
             <li class="list-group-item">
                 <div class="container">
                     <div class="row">
                         <div class="col-2">
-                            <?= $userBlock['name']. " ".$userBlock['lastname'] ?>
+                            <?= $member['name']. " ".$member['lastname'] ?>
                         </div>
                         <div class="col-2">
-                            <?= $userBlock['personalCode'] ?>
+                            <?= $member['personalCode'] ?>
                         </div>
                         <div class="col-3">
-                            <?= $userBlock['number'] ?>
+                            <?= $member['number'] ?>
                         </div>
                         <div class="col-2">
-                            <?= $userBlock['balance'] ?>
+                            <?= $member['balance'] ?>
                         </div>
                         <div class="col-3">
-                            <a href="http://localhost/bank_php/addMoney.php?id=<?= $userBlock['id'] ?>" class="btn btn-outline-success btn-sm">Add</a>
-                            <a href="http://localhost/bank_php/withdraw.php?id=<?= $userBlock['id'] ?>" class="btn btn-outline-success btn-sm">Debit</a>
-                            <a href="http://localhost/bank_php/show.php?id=<?= $userBlock['id'] ?>" class="btn btn-outline-success btn-sm">Delete</a>
+                            <a href="http://localhost/bank_php/addMoney.php?id=<?= $member['id'] ?>" class="btn btn-outline-success btn-sm">Add</a>
+                            <a href="http://localhost/bank_php/withdraw.php?id=<?= $member['id'] ?>" class="btn btn-outline-info btn-sm">Debit</a>
+                            <a href="http://localhost/bank_php/delete.php?id=<?= $member['id'] ?>" class="btn btn-outline-danger btn-sm">Delete</a>
                         </div>
                     </div>
                 </div>
