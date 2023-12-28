@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-require __DIR__ . '../menu.php';
-require __DIR__ . '../functions.php';
 
 $user=[];
 if ($_GET['id'] || $_GET['id']==0) {
@@ -28,7 +26,7 @@ foreach ($usersData as $userItem) {
 </head>
 <body>
 
-<?= require __DIR__ . '/menu.php'?>
+<?php require __DIR__ . '/menu.php'?>
 
     <h1>Debit </h1>
 

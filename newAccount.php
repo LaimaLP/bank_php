@@ -15,7 +15,7 @@ if (isset($_GET['error'])) {
 </head>
 
 <body>
-    <?= require __DIR__ . '/menu.php' ?>
+<?php require __DIR__ . '/menu.php' ?>
     <form class="accountForm" action="http://localhost/bank_php/store.php" method="post">
         <h2>Create New Account </h2>
         <div class="accountInput">

@@ -12,9 +12,4 @@
       </a>
     </li>
   </ul>
-
 </nav>
-
-<!-- <?php if( $_SESSION['login'] == 'logIn') : ?> -->
-  <!-- <span> <b>Banker:</b> <?= $_SESSION['name'] ?>    </span> -->
-  <!-- <?php endif ?>  -->

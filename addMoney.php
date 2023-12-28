@@ -30,7 +30,7 @@ foreach ($usersData as $userItem) {
 </head>
 <body>
 
-<?= require __DIR__ . '/menu.php'?>
+<?php require __DIR__ . '/menu.php'?>
 <?php require __DIR__ . '/msg.php' ?>
 
 

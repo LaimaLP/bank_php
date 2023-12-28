@@ -20,7 +20,7 @@ if ($_SESSION['login'] !== 'logIn') {
 </head>
 
 <body>
-    <?= require __DIR__ . '/menu.php'?>
+    <?php require __DIR__ . '/menu.php'?>
     <?php require __DIR__ . '/msg.php' ?>
 
 
