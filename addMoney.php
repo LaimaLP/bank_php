@@ -1,6 +1,5 @@
 <?php
-require __DIR__ . '../menu.php';
-require __DIR__ . '../functions.php';
+// require __DIR__ . '../functions.php';
 
 $user=[];
 if ($_GET['id'] || $_GET['id']==0) {
@@ -28,7 +27,7 @@ foreach ($usersData as $userItem) {
 </head>
 <body>
 
-<?= $menu ?>
+<?= require __DIR__ . '/menu.php'?>
 
     <h1>Prideti lesas </h1>
     <!--  Name: $user['name']-->

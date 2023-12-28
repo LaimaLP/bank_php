@@ -12,8 +12,7 @@
             header('Location: http://localhost/bank_php/auth/register.php');
             die;
         }
-        $newUsers = file_get_contents(__DIR__.'/data/newUsers.ser'); //jei metodas post, paimam duomenis, isserializuojam
-        $newUsers = unserialize($newUsers); 
+        $newUsers = unserialize(file_get_contents(__DIR__.'/data/newUsers.ser')); //jei metodas post, paimam duomenis, isserializuojam
         // check user existence, kad nesikartotu tuo paciu emailu
         foreach ($newUsers as $user) { 
             if ($user['email'] == $_POST['email']) {
@@ -48,7 +47,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register to Forest</title>
+    <title>Register to BANK</title>
 </head>
 <body>
     <h1>Register to Bank</h1>

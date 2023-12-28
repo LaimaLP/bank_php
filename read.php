@@ -1,6 +1,10 @@
 <?php
-require __DIR__ . '../menu.php';
 require __DIR__ . '../functions.php';
+session_start(); //jei prisijuges, neturi rodyti login psl, uzdedama salyga
+if ($_SESSION['login'] !== 'logIn') {
+    header('Location: http://localhost/bank_php/auth/login.php');
+    die;
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +18,7 @@ require __DIR__ . '../functions.php';
 </head>
 
 <body>
-    <?= $menu ?>
+    <?= require __DIR__ . '/menu.php'?>
 
     <div class="container mt-5">
         <div class="row">

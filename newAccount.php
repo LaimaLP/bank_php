@@ -1,22 +1,8 @@
 <?php
-session_start();
-require __DIR__ . '../menu.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $getUsers = file_get_contents(__DIR__ . '/seeder/users.ser');
-    $usersData = unserialize($users);
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
 }
-
-// $user = [
-//     'name' => $_POST['name'],
-//     'lastname' => $_POST['lastname'],
-//     'IBAN' => $_POST['IBAN'],
-//     'PC' => $_POST['PC'],
-
-// ];
-// $users[] = $user;
-// file_put_contents(__DIR__ . '/data/users.ser', serialize($users));
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,32 +14,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <?= $menu ?>
- 
+    <?= require __DIR__ . '/menu.php' ?>
     <form class="accountForm" action="http://localhost/bank_php/store.php" method="post">
-    <h2>Create New Account </h2>
-    <div class="accountInput">
-        <label for="name">First Name:</label>
-        <input type="text" id="name" name="name">
-    </div>
-    <div  class="accountInput">
-        <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="lastname">
-    </div>
-    <div  class="accountInput">
-        <label for="IBAN">IBAN:</label>
-        <input type="text" id="IBAN" name="IBAN">
-    </div>
-    <div  class="accountInput">
-        <label for="PC">Personal Code:</label>
-        <input type="text" id="PC" name="PC">
-    </div>
-    <button type="submit">Create account</button>
-</form>
+        <h2>Create New Account </h2>
+        <div class="accountInput">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="accountInput">
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+        </div>
+        <div class="accountInput">
+            <label for="IBAN">IBAN:</label>
+            <input type="text" id="IBAN" name="IBAN" required>
+        </div>
+        <div class="accountInput">
+            <label for="PC">Personal Code:</label>
+            <input type="text" id="PC" name="PC" required>
+        </div>
+        <button type="submit">Create account</button>
+    </form>
+    <?php if (isset($error)) : ?>
+        <h1 style="color: crimson; text-align:center"><?= $error ?></h1>
+    <?php endif ?>
 </body>
 
 </html>
-
 
 
 

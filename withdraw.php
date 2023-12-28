@@ -26,7 +26,7 @@ foreach ($usersData as $userItem) {
 </head>
 <body>
 
-<?= $menu ?>
+<?= require __DIR__ . '/menu.php'?>
 
     <h1>Debit </h1>
 

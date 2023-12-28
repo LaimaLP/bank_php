@@ -1,6 +1,4 @@
-<?php
 
-$menu = "   
 <nav style='background-color: grey; padding: 10px;'>
   <ul style='display:flex; flex-direction:row; justify-content:center; gap:15px; list-style: none; margin: 0; padding: 0;'>
     <li>
@@ -14,15 +12,9 @@ $menu = "
       </a>
     </li>
   </ul>
-</nav>";
 
-function renderMenu()
-{
-    echo "   
-     <nav>
-    <ul>
-        <li><a href='#'>Prideti lesu</a></li>
-        <li><a href='#'>Nuskaiciuoti lesas</a></li>
-    </ul>
-</nav>";
-}
+</nav>
+
+<!-- <?php if( $_SESSION['login'] == 'logIn') : ?> -->
+  <!-- <span> <b>Banker:</b> <?= $_SESSION['name'] ?>    </span> -->
+  <!-- <?php endif ?>  -->
