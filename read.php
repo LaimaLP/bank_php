@@ -58,7 +58,8 @@ if ($_SESSION['login'] !== 'logIn') {
         </li>
         <?php $members = unserialize(file_get_contents(__DIR__.'/data/users.ser')) ?>
 
-
+        <?php usort($members, fn ($a, $b) => $a['lastname'] <=> $b['lastname']) ?>;
+      
         <?php foreach ($members as $member) : ?>
             <li class="list-group-item">
                 <div class="container">
@@ -85,6 +86,7 @@ if ($_SESSION['login'] !== 'logIn') {
             </li>
 
         <?php endforeach ?>
+
     </ul>
 
 </body>
