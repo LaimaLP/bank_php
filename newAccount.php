@@ -28,7 +28,7 @@ if (isset($_GET['error'])) {
         </div>
         <div class="accountInput">
             <label for="IBAN">IBAN:</label>
-            <input type="text" id="IBAN" name="IBAN" required>
+            <input type="hidden" id="IBAN" name="IBAN" required>
         </div>
         <div class="accountInput">
             <label for="PC">Personal Code:</label>

@@ -20,7 +20,7 @@ function createNewAccount(){
 $id = rand(1000, 9999);
 $name = $_POST['name'] ?? 0; 
 $lastname = $_POST['lastname'] ?? 0; 
-$number = $_POST['IBAN'] ?? 0; 
+$number = "LT" .rand(100000000000000000, 999999999999999999); 
 $personalCode = $_POST['PC'] ?? 0; 
 
 $users = unserialize(file_get_contents(__DIR__ . '/data/users.ser'));
