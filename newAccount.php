@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_GET['error'])) {
-    $error = $_GET['error'];
+if (isset($_SESSION['error'])) {
+    $error = $_SESSION['error'];
 }
 ?>
 <!DOCTYPE html>
