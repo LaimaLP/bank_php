@@ -46,7 +46,7 @@ require __DIR__ . '../functions.php';
                         <b>Balance</b>
                     </div>
 
-                    
+
                     <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'logIn') : ?>
                         <div class="col-3">
                             <b>Action</b>
@@ -58,7 +58,7 @@ require __DIR__ . '../functions.php';
         </li>
         <?php $members = unserialize(file_get_contents(__DIR__ . '/data/users.ser')) ?>
 
-        <?php usort($members, fn ($a, $b) => $a['lastname'] <=> $b['lastname']) ?>;
+        <?php usort($members, fn ($a, $b) => $a['lastname'] <=> $b['lastname']) ?>
 
         <?php foreach ($members as $member) : ?>
             <li class="list-group-item">

@@ -13,7 +13,7 @@
 <?php require __DIR__ . '../../menu.php'?>
 
 
-    <h1>Welcome to BANK</h1>
+    <h1>Welcome to future BANK</h1>
     <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'logIn'): ?>
         <h2>Hello, <?= $_SESSION['name'] ?></h2>
         <a href="authorized.php">Go to members page</a>

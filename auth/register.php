@@ -76,7 +76,7 @@ if (isset($_SESSION['old_data'])) {
                 <input  class="form-control" type="password" name="password" placeholder="Password">
             </div>
             <div class="form-group">
-                <label>Password</label>
+                <label>Repeat Password</label>
                 <input  class="form-control" type="password" name="password2" placeholder="Repeat Password">
             </div>
 
