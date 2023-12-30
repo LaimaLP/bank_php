@@ -6,7 +6,7 @@ $users = [
         "name" => "Antanas",
         "lastname" => "Jonaitis",
         "number" => "LT" .rand(100000000000000000, 999999999999999999),
-        "personalCode" => "49305311112",
+        "personalCode" => "39305311112",
         "balance" => 16,
     ],
     [
@@ -14,7 +14,7 @@ $users = [
         "name" => "Petras",
         "lastname" => "Antaninis",
         "number" => "LT" .rand(100000000000000000, 999999999999999999),
-        "personalCode" => "49305322222",
+        "personalCode" => "39705322222",
         "balance" => 516,
     ],
     [
@@ -22,7 +22,7 @@ $users = [
         "name" => "Jonas",
         "lastname" => "Petrainis",
         "number" => "LT" .rand(100000000000000000, 999999999999999999),
-        "personalCode" => "49305333333",
+        "personalCode" => "39005333333",
         "balance" => 432.5,
     ],
     [
@@ -30,7 +30,7 @@ $users = [
         "name" => "Jonas",
         "lastname" => "Jonaitis",
         "number" => "LT" .rand(100000000000000000, 999999999999999999),
-        "personalCode" => "49305344444",
+        "personalCode" => "39905344444",
         "balance" => 200000100,
     ],
     [
@@ -38,7 +38,7 @@ $users = [
         "name" => "Petras",
         "lastname" => "Petrinis",
         "number" => "LT" .rand(100000000000000000, 999999999999999999),
-        "personalCode" => "49305555555",
+        "personalCode" => "38705555555",
         "balance" => 53218,
     ],
 

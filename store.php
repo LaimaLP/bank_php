@@ -13,7 +13,7 @@ foreach ($members as $member) {
     }
 }
 
-if (strlen($_POST['name']) < 3 && strlen($_POST['lastname']) < 3) {
+if (strlen($_POST['name']) < 3 || strlen($_POST['lastname']) < 3) {
     $_SESSION['error'] = 'User name and last name must be more than three letters.';
     header("Location: http://localhost/bank_php/newAccount.php");
     exit;
