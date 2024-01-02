@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['login']) || $_SESSION['login'] != 'logIn') {
+    header('Location: http://localhost/bank_php/auth/login.php');
+    exit;
+}
 if (isset($_SESSION['error'])) {
     $error = $_SESSION['error'];
 }

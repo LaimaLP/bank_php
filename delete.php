@@ -50,7 +50,7 @@
                 <form action="http://localhost/bank_php/destroy.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
                     <button type="submit" class="btn btn-outline-primary">Yes</button>
                 </form>
-                <a href="http://localhost/bank_php/read.php" class="btn btn-outline-secondary">No</a>
+                <a href="http://localhost/bank_php/index.php" class="btn btn-outline-secondary">No</a>
             </div>
 
         </div>

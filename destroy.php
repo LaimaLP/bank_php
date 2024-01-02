@@ -12,8 +12,8 @@ foreach ($members as $i => $member) {
             unset($members[$i]);
             break;
         } else if($member['balance'] > 0) {
-            $_SESSION['error'] = "$member[name]'s account can't be deleted. Account balance: $member[balance] ";
-            header('Location: http://localhost/bank_php/read.php');
+            $_SESSION['error'] = "$member[name]'s account can't be deleted. Account balance: $member[balance] €";
+            header('Location: http://localhost/bank_php/index.php');
             exit;
         }
     }
@@ -22,5 +22,5 @@ foreach ($members as $i => $member) {
 file_put_contents(__DIR__ . '/data/users.ser', serialize($members));
 $_SESSION['success'] = "$member[name]'s account was deleted";
 
-header('Location: http://localhost/bank_php/read.php');
+header('Location: http://localhost/bank_php/index.php');
 exit;

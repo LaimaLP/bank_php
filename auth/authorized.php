@@ -23,7 +23,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != 'logIn') {
 
     <h1>Welcome to BANK members page</h1>
     <h2>Hello, <?= $_SESSION['name'] ?></h2>
-    <a href="../read.php?name=<?= $_SESSION['name'] ?>">Go to Account List Page</a>
+    <a href="../index.php?name=<?= $_SESSION['name'] ?>">Go to Account List Page</a>
 
 
 

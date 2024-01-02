@@ -3,7 +3,7 @@ session_start();
 $id = $_GET['id'] ?? 0;
 
 if (!$id) {
-    header('Location: http://localhost/bank_php/read.php');
+    header('Location: http://localhost/bank_php/index.php');
     exit;
 }
 
@@ -20,4 +20,4 @@ foreach ($members as $i => $member) {
 file_put_contents(__DIR__ . '/data/users.ser', serialize($members) );
 $_SESSION['success'] = "$_POST[addMoney] € was added to $member[name]'s account";
 
-header('Location: http://localhost/bank_php/read.php');
+header('Location: http://localhost/bank_php/index.php');

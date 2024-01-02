@@ -3,7 +3,7 @@ session_start();
 $id = $_GET['id'] ?? 0;
 
 if (!$id) {
-    header('Location: http://localhost/bank_php/read.php');
+    header('Location: http://localhost/bank_php/index.php');
     exit;
 }
 
@@ -16,8 +16,8 @@ foreach ($members as $i => $member) {
             $members[$i] = $member;
             break;
         } else {
-            $_SESSION['error'] = "Cannot debit $_POST[debitMoney] € from $member[name]'s account.";
-            header('Location: http://localhost/bank_php/read.php');
+            $_SESSION['error'] = "Cannot withdraw $_POST[debitMoney] € from $member[name]'s account. Maximal ammount $member[balance] €.";
+            header('Location: http://localhost/bank_php/index.php');
             exit;
         }
     }
@@ -26,5 +26,5 @@ foreach ($members as $i => $member) {
 file_put_contents(__DIR__ . '/data/users.ser', serialize($members));
 $_SESSION['error'] = "$_POST[debitMoney] € was debit from $member[name]'s account.";
 
-header('Location: http://localhost/bank_php/read.php');
+header('Location: http://localhost/bank_php/index.php');
 exit;

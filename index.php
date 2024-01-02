@@ -11,14 +11,12 @@ require __DIR__ . '../functions.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="http://localhost/bank_php/script.js" defer></script>
-
     <title>Read</title>
 </head>
 
 <body>
     <?php require __DIR__ . '/menu.php' ?>
     <?php require __DIR__ . '/msg.php' ?>
-
 
     <div class="container mt-5">
         <div class="row">
@@ -27,7 +25,6 @@ require __DIR__ . '../functions.php';
             </div>
         </div>
     </div>
-
 
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
@@ -45,8 +42,7 @@ require __DIR__ . '../functions.php';
                     <div class="col-2">
                         <b>Balance</b>
                     </div>
-
-
+<!-- Jei logIn rodom Action stulpeli. -->
                     <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'logIn') : ?>
                         <div class="col-3">
                             <b>Action</b>
@@ -76,11 +72,11 @@ require __DIR__ . '../functions.php';
                         <div class="col-2">
                             <?= $member['balance'] ?>
                         </div>
-
+<!-- Jei logIn rodom Action stulpelio veiksmus. -->
                         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'logIn') : ?>
                             <div class="col-3">
                                 <a href="http://localhost/bank_php/addMoney.php?id=<?= $member['id'] ?>" class="btn btn-outline-success btn-sm">Add</a>
-                                <a href="http://localhost/bank_php/withdraw.php?id=<?= $member['id'] ?>" class="btn btn-outline-info btn-sm">Debit</a>
+                                <a href="http://localhost/bank_php/withdraw.php?id=<?= $member['id'] ?>" class="btn btn-outline-info btn-sm">Withdraw</a>
                                 <a href="http://localhost/bank_php/delete.php?id=<?= $member['id'] ?>" class="btn btn-outline-danger btn-sm">Delete</a>
                             </div>
                         <?php endif ?>
