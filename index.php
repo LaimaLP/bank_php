@@ -52,10 +52,11 @@ require __DIR__ . '../functions.php';
                 </div>
             </div>
         </li>
+        <!--  pasiimam memberiu faila, decodinam, ir toliau tikrinam kiekviena-->
         <?php $members = unserialize(file_get_contents(__DIR__ . '/data/users.ser')) ?>
 
         <?php usort($members, fn ($a, $b) => $a['lastname'] <=> $b['lastname']) ?>
-
+<!-- isrenkam is kiekvieno memberio jo informacijos bloka, isskaidom -->
         <?php foreach ($members as $member) : ?>
             <li class="list-group-item">
                 <div class="container">
@@ -75,6 +76,7 @@ require __DIR__ . '../functions.php';
 <!-- Jei logIn rodom Action stulpelio veiksmus. -->
                         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'logIn') : ?>
                             <div class="col-3">
+                                <!-- mygtukai nuorodos i action atvaizdavimo puslapius, per query (get metodu) perduodama memberio info (id) -->
                                 <a href="http://localhost/bank_php/addMoney.php?id=<?= $member['id'] ?>" class="btn btn-outline-success btn-sm">Add</a>
                                 <a href="http://localhost/bank_php/withdraw.php?id=<?= $member['id'] ?>" class="btn btn-outline-info btn-sm">Withdraw</a>
                                 <a href="http://localhost/bank_php/delete.php?id=<?= $member['id'] ?>" class="btn btn-outline-danger btn-sm">Delete</a>
