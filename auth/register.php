@@ -65,21 +65,23 @@ if (isset($_SESSION['old_data'])) {
         <form action="" method="post">
             <div class="form-group">
                 <label>Name</label>
-                <input  class="form-control" type="text" name="name" placeholder="Name" value="<?= isset($old_data['name']) ? $old_data['name'] : '' ?>">
+                <input  required class="form-control" type="text" name="name" placeholder="Name" value="<?= isset($old_data['name']) ? $old_data['name'] : '' ?>">
             </div>
             <div class="form-group">
                 <label>Email adress</label>
-                <input  class="form-control" type="text" name="email" value="<?= isset($old_data['email']) ? $old_data['email'] : '' ?>" placeholder="Email">
+                <input  required class="form-control" type="email" name="email" value="<?= isset($old_data['email']) ? $old_data['email'] : '' ?>" placeholder="Email">
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input  class="form-control" type="password" name="password" placeholder="Password">
+                <input  required class="form-control" type="password" name="password" placeholder="Password">
             </div>
             <div class="form-group">
                 <label>Repeat Password</label>
-                <input  class="form-control" type="password" name="password2" placeholder="Repeat Password">
+                <input required class="form-control" type="password" name="password2" placeholder="Repeat Password">
             </div>
 
             <button style=" margin-top: 10px" type="submit" class="btn btn-primary">Register</button>
         </form>
+        <span>Already have an account? </span> <a href='http://localhost/bank_php/auth/login.php'> Log In</button>
+
     </div>

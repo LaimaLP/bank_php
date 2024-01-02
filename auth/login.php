@@ -38,8 +38,7 @@ if (isset($_SESSION['error'])) { // jei turi errora, istrinam ji, kad nesivalkio
 </head>
 
 <body style="background-color: skyblue; text-align:center;">
-
-
+<?php require __DIR__ . '../../menu.php'?>
 
     <!-- atvaizduojam errora, jei setintas: -->
     <?php if (isset($error)) : ?>
@@ -50,16 +49,20 @@ if (isset($_SESSION['error'])) { // jei turi errora, istrinam ji, kad nesivalkio
         <form action="" method="post">
             <div class="form-group">
                 <label>Email address</label>
-                <input type="email" name="email" class="form-control" placeholder="Enter email">
+                <input required type="email" name="email" class="form-control" placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password"  name="password" class="form-control"placeholder="Password">
+                <input required type="password"  name="password" class="form-control"placeholder="Password">
             </div>
             <button style=" margin-top: 10px" type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <span>Don't have an account? </span> <a href='http://localhost/bank_php/auth/register.php'> Register</button>
+
     </div>
 
 </body>
 
 </html>
+
+
