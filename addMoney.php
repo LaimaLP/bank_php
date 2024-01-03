@@ -30,7 +30,6 @@ if ($_GET['id']) {
 <body>
 
     <?php require __DIR__ . '/menu.php' ?>
-    <?php require __DIR__ . '/msg.php' ?>
 
     <?php if (!$user) : ?>
 
@@ -42,15 +41,16 @@ if ($_GET['id']) {
 
         <div style="text-align: center;">
             <h1>Add funds </h1>
-                <p> <b>Name: </b> <?= $user['name'] ?> </p>
-                <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
-                <p> <b> Balance: </b> <?= $user['balance'] ?> €.</p>
-                <form action="http://localhost/bank_php/update.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
-                    <input type="text" name="addMoney">
-                    <button class="btn btn-outline-success btn-sm" type="submit">Add</button>
-                </form>
+            <p> <b>Name: </b> <?= $user['name'] ?> </p>
+            <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
+            <p> <b> Balance: </b> <?= $user['balance'] ?> €.</p>
+            <form action="http://localhost/bank_php/update.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
+                <input type="number" min="0" name="addMoney">
+                <button class="btn btn-outline-success btn-sm" type="submit">Add</button>
+            </form>
         </div>
+    <?php endif ?>
 </body>
-<?php endif ?>
+
 
 </html>

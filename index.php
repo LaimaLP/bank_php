@@ -71,7 +71,7 @@ require __DIR__ . '../functions.php';
                             <?= $member['number'] ?>
                         </div>
                         <div class="col-2">
-                            <?= $member['balance'] ?>
+                            <?= $member['balance'] ?> €
                         </div>
 <!-- Jei logIn rodom Action stulpelio veiksmus. -->
                         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'logIn') : ?>

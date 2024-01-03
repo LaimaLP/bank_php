@@ -1,7 +1,7 @@
 <!-- visur susidedam session starta, nes info pernesinejame is vieno psl i kita -->
 <!-- rodom kazka tik jei yra nustatyta sesija success arba error, kitu atveju nesirodo niekas -->
 <?php if (isset($_SESSION['success']) || isset($_SESSION['error'])) : ?> 
-    <div class="container mt-5" data-remove-after="5" data-removable>
+    <div class="container mt-5" data-remove-after="6" data-removable>
         <div class="row justify-content-center">
             <div class="col-4">
 <!-- jeigu yra pasetintas successas, rodom. kai parodom successa, istrinam  -->
