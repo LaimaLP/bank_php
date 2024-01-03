@@ -1,11 +1,10 @@
 <?php
 session_start();
-//GET vaizdas, keliauja i store.php
-// require __DIR__ . '../functions.php';
+//GET vaizdas, keliauja i update.php
 // per query perduota memberio info - id, jei yra id
 
 if ($_GET['id']) {
-    // decodinam, kad prietume prie kiekvieno ir tikrintume id atejusi is querio ir esancio jau sara
+    // decodinam, kad prieitume prie kiekvieno ir tikrintume id atejusi is querio ir esancio jau sarase
     $usersData = unserialize(file_get_contents(__DIR__ . '/data/users.ser'));
     $user = null;
     foreach ($usersData as $userItem) {
