@@ -1,5 +1,6 @@
 <?php
 session_start();
+//GET vaizdas, keliauja i store.php
 // require __DIR__ . '../functions.php';
 // per query perduota memberio info - id, jei yra id
 
