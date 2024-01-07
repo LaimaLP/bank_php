@@ -63,7 +63,7 @@ function createNewAccount($members)
 
     file_put_contents(__DIR__ . '/data/users.ser', serialize($members));
     $_SESSION['success'] = "New account of $name $lastname was created";
-
+    
     header('Location: http://localhost/bank_php/index.php');
 }
 

@@ -18,7 +18,8 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != 'logIn') {
 </head>
 
 <body style="background-color: skyblue; text-align:center;">
-<?php require __DIR__ . '../../menu.php'?>
+<?php require __DIR__ . '../../parts/menu.php'?>
+
 
 
     <h1>Welcome to BANK members page</h1>

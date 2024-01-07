@@ -1,5 +1,6 @@
 <?php
 session_start();
+//procesas, readuogos info issaugojimas, siaip PUT metodas, bet musu atvejus html POST.
 $id = $_GET['id'] ?? 0;
 
 if (!$id) {
@@ -8,7 +9,7 @@ if (!$id) {
 }
 
 $members = unserialize(file_get_contents(__DIR__.'/data/users.ser'));
-$money = ($_POST['addMoney'])>0 ?  (int)$_POST['addMoney'] : 0;
+$money = ($_POST['addMoney']) > 0 ?  (float)$_POST['addMoney'] : 0;
 
 
 foreach ($members as $i => $member) {

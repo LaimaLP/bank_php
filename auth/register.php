@@ -53,7 +53,8 @@ if (isset($_SESSION['old_data'])) {
 </head>
 
 <body style="background-color: skyblue; text-align:center;">
-<?php require __DIR__ . '../../menu.php'?>
+<?php require __DIR__ . '../../parts/menu.php'?>
+
 
 
     <?php if (isset($error)) : ?>

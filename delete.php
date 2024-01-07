@@ -1,12 +1,13 @@
-<?php session_start() ?>;
+<?php session_start() 
+//vaizdas patvirtinti info istrynima, metodas GET. AR tikrai nori istrinti??>;
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>Confirm Delete</title>
+  
     <style>
         .delete {
             display: flex;
@@ -32,7 +33,6 @@
             align-items: center;
             flex-direction: row;
             gap: 10px;
-           
         }
         form{
             margin-bottom: 0;

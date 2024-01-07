@@ -38,7 +38,8 @@ if (isset($_SESSION['error'])) { // jei turi errora, istrinam ji, kad nesivalkio
 </head>
 
 <body style="background-color: skyblue; text-align:center;">
-<?php require __DIR__ . '../../menu.php'?>
+<?php require __DIR__ . '../../parts/menu.php'?>
+
 
     <!-- atvaizduojam errora, jei setintas: -->
     <?php if (isset($error)) : ?>

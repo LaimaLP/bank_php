@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//proceso puslapis, is delete ateina ID kuri norim sunaikinti
+//proceso puslapis, is delete ateina ID kuri norim sunaikinti. siaip DELETE metodas, thml POST
 $id = $_GET['id'] ?? 0; //pasiimam ta id siunciama
 
 $members = unserialize(file_get_contents(__DIR__ . '/data/users.ser')); //jei metodas post, paimam duomenis, isserializuojam

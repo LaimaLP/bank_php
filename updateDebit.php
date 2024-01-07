@@ -8,15 +8,17 @@ if (!$id) {
 }
 
 $members = unserialize(file_get_contents(__DIR__ . '/data/users.ser'));
+$money = ($_POST['withdraw']) > 0 ?  (float)$_POST['withdraw'] : 0;
+
 
 foreach ($members as $i => $member) {
     if ($member['id'] == $id) { 
-        if ($member['balance'] >= $_POST['debitMoney']) {
-            $member['balance'] =  $member['balance'] - $_POST['debitMoney']; //ji updatinu. isideda stringas, tai prieky dar (int) pridedame. "castingas" irasome ko norime
+        if ($member['balance'] >= $money) {
+            $member['balance'] =  $member['balance'] - $money; //ji updatinu. isideda stringas, tai prieky dar (int) pridedame. "castingas" irasome ko norime
             $members[$i] = $member;
             break;
         } else {
-            $_SESSION['error'] = "Cannot withdraw $_POST[debitMoney] € from $member[name]'s account. Maximal ammount $member[balance] €.";
+            $_SESSION['error'] = "Cannot withdraw $money € from $member[name]'s account. Maximal ammount $member[balance] €.";
             header('Location: http://localhost/bank_php/index.php');
             exit;
         }
@@ -24,6 +26,6 @@ foreach ($members as $i => $member) {
 }
 
 file_put_contents(__DIR__ . '/data/users.ser', serialize($members));
-$_SESSION['success'] = "$_POST[debitMoney] € was withdrawed from $member[name]'s account.";
+$_SESSION['success'] = "$money € was withdrawed from $member[name]'s account.";
 header('Location: http://localhost/bank_php/index.php');
 exit;

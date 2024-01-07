@@ -30,7 +30,7 @@ $users = [
         "name" => "Jonas",
         "lastname" => "Jonaitis",
         "number" => "LT" .rand(100000000000000000, 999999999999999999),
-        "personalCode" => "39905344444",
+        "personalCode" => "38205344444",
         "balance" => 200000100,
     ],
     [
@@ -41,7 +41,14 @@ $users = [
         "personalCode" => "38705555555",
         "balance" => 53218,
     ],
-
+    [
+        "id" => rand(1000, 9999),
+        "name" => "Ona",
+        "lastname" => "Jonaitiene",
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => "48705555555",
+        "balance" => 1000,
+    ],
 
 ];
 $ser = serialize($users);
