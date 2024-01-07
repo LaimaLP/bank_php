@@ -33,6 +33,8 @@ if ($_GET['id']?? 0) {
 <body>
 
 <?php require __DIR__ . '../parts/menu.php' ?>
+<?php require __DIR__ . '../parts/msg.php' ?>
+
 
 
     <?php if (!$user) : ?>

@@ -19,16 +19,15 @@ function personalCodeValidation($personalCode)
     $dienaDigit = substr($pc, 5, 2);
     if (
         strlen($pc) > 11 ||
-        $pirmasDigit < 1 || $pirmasDigit > 6 ||
+        $pirmasDigit < 2 || $pirmasDigit > 6 ||
         $menuoDigit > 12 ||
         $dienaDigit > 31
     ) {
-        $_SESSION['error'] = "Invalid personal code.  $pirmasDigit menuo: $menuoDigit  diena $dienaDigit ";
+        $_SESSION['error'] = "Invalid personal code. ";
         header("Location: http://localhost/bank_php/newAccount.php");
         exit;
     }
 }
-
 
 function nameLengthValidation($user){
     if (strlen($user['name']) < 3 || strlen($user['lastname']) < 3) 
@@ -38,7 +37,6 @@ function nameLengthValidation($user){
         exit;
     }
     }
-
   
 function createNewAccount($members)
 {
@@ -65,6 +63,7 @@ function createNewAccount($members)
     $_SESSION['success'] = "New account of $name $lastname was created";
     
     header('Location: http://localhost/bank_php/index.php');
+    exit;
 }
 
 

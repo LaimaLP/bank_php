@@ -20,6 +20,7 @@ foreach ($members as $i => $member) {
 }
 
 file_put_contents(__DIR__ . '/data/users.ser', serialize($members));
+
 $_SESSION['success'] = "$member[name]'s account was deleted";
 
 header('Location: http://localhost/bank_php/index.php');

@@ -4,9 +4,6 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] != 'logIn') {
     header('Location: http://localhost/bank_php/auth/login.php');
     exit;
 }
-if (isset($_SESSION['error'])) {
-    $error = $_SESSION['error'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +19,8 @@ if (isset($_SESSION['error'])) {
 <body>
 
 <?php require __DIR__ . '/parts/menu.php' ?>
+<?php require __DIR__ . '../parts/msg.php' ?>
+
 
     <form class="accountForm" action="http://localhost/bank_php/store.php" method="post">
         <h2>Create New Account </h2>
@@ -39,10 +38,6 @@ if (isset($_SESSION['error'])) {
         </div>
         <button type="submit" class="btn btn-secondary">Create account</button>
     </form>
-
-    <?php if (isset($error)) : ?>
-        <h1 style="color: crimson; text-align:center"><?= $error ?></h1>
-    <?php endif ?>
 
 </body>
 
