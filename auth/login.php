@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($user['password'] == sha1($_POST['password'])) { //sulyginam is serverio pass ir irasyta, atkeliaujanti dar heshinam
                 $_SESSION['login'] = 'logIn'; //po logino irasome i sesija duomenis ir issiunciame i autorizuota psl
                 $_SESSION['name'] = $user['name'];
-                header('Location: http://localhost/bank_php/auth/authorized.php');
+                header('Location: http://localhost/bank_php/auth/index.php');
                 exit;
             }
         }
@@ -45,6 +45,7 @@ if (isset($_SESSION['error'])) { // jei turi errora, istrinam ji, kad nesivalkio
     <?php if (isset($error)) : ?>
         <h1 style="color: crimson;"><?= $error ?></h1>
     <?php endif ?>
+
     <h2 style="text-align: center; margin-bottom: 50px;"> Welcome to Login </h2>
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <form action="" method="post">
