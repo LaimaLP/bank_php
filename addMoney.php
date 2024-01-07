@@ -55,7 +55,7 @@ if (!$_GET['id']) {
             <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
             <p> <b> Balance: </b> <?= number_format($user['balance'], 3, '.', '')  ?> €.</p>
             <form action="http://localhost/bank_php/update.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
-                <input type="text" min="0" name="addMoney">
+                <input type="text" pattern="\d+(\.\d+)?" name="addMoney">
                 <button class="btn btn-outline-success btn-sm" type="submit">Add</button>
             </form>
         </div>
