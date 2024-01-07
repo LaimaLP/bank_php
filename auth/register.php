@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: http://localhost/bank_php/auth/register.php');
         die;
     }
+    
     $newUsers = unserialize(file_get_contents(__DIR__ . '/data/newUsers.ser')); //jei metodas post, paimam duomenis, isserializuojam
     // check user existence, kad nesikartotu tuo paciu emailu
     foreach ($newUsers as $user) {
@@ -53,7 +54,7 @@ if (isset($_SESSION['old_data'])) {
 </head>
 
 <body style="background-color: skyblue; text-align:center;">
-<?php require __DIR__ . '../../parts/menu.php'?>
+<?php require __DIR__ . '/../parts/menu.php'?>
 
 
 

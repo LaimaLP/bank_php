@@ -5,7 +5,6 @@ function newMemberSamePersonalCodeValidation($members)
     foreach ($members as $member) {
         if ($member['personalCode'] == $_POST['PC']) {
             $_SESSION['error'] = 'Member with this personal code already exist';
-            $_SESSION['old_data'] = $_POST;
             header("Location: http://localhost/bank_php/newAccount.php");
             exit;
         }
@@ -29,15 +28,15 @@ function personalCodeValidation($personalCode)
     }
 }
 
-function nameLengthValidation($user){
-    if (strlen($user['name']) < 3 || strlen($user['lastname']) < 3) 
-    {
+function nameLengthValidation($user)
+{
+    if (strlen($user['name']) < 3 || strlen($user['lastname']) < 3) {
         $_SESSION['error'] = 'User name and last name must be more than three letters.';
         header("Location: http://localhost/bank_php/newAccount.php");
         exit;
     }
-    }
-  
+}
+
 function createNewAccount($members)
 {
     if (isset($_SESSION["error"])) {
@@ -52,8 +51,8 @@ function createNewAccount($members)
 
     $members[] = [
         'id' => $id,
-        'name' => $name,
-        'lastname' => $lastname,
+        'name' => ucfirst($name),
+        'lastname' => ucfirst($lastname),
         'number' => $number,
         'personalCode' => $personalCode,
         'balance' => 0,
@@ -61,20 +60,7 @@ function createNewAccount($members)
 
     file_put_contents(__DIR__ . '/data/users.ser', serialize($members));
     $_SESSION['success'] = "New account of $name $lastname was created";
-    
+
     header('Location: http://localhost/bank_php/index.php');
     exit;
 }
-
-
-
-
-
-// newMemberNameAndLastNameValidation($_POST['name'], $_POST['lastname'] ){
-//     if (strlen($_POST['name']) < 3 || strlen($_POST['lastname']) < 3) 
-//     {
-//         $_SESSION['error'] = 'User name and last name must be more than three letters.';
-//         header("Location: http://localhost/bank_php/newAccount.php");
-//         exit;
-//     }
-//     }
