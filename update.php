@@ -22,7 +22,7 @@ if (is_numeric($_POST['addMoney'])) {
     }
 }else{
         $_SESSION['error'] = "Input must be a number";
-        header('Location: http://localhost/bank_php/index.php');
+        header("Location: http://localhost/bank_php/addMoney.php?id=$id");
         exit;
 }
 

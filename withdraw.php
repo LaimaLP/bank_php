@@ -52,7 +52,7 @@ if ($_GET['id']?? 0) {
             <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
             <p> <b> Saskaitos likutis: </b> <?= number_format($user['balance'], 3, '.', '') ?> €.</p>
             <form action="http://localhost/bank_php/updateDebit.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
-                <input type="text" min = "0"; name="withdraw">
+                <input type="text" pattern="\d+(\.\d+)?" name="withdraw">
                 <button class="btn btn-outline-info btn-sm" type="submit">Debit money</button>
             </form>
         </div>
