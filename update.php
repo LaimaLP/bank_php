@@ -12,7 +12,7 @@ $members = unserialize(file_get_contents(__DIR__ . '/data/users.ser'));
 
 $money = ($_POST['addMoney']) > 0 ?  (float)$_POST['addMoney'] : 0;
 
-if (is_numeric($_POST['addMoney'])) {
+if (is_numeric($_POST['addMoney']) && $_POST['addMoney']>=0 ) {
     foreach ($members as $i => $member) {
         if ($member['id'] == $id) {
             $member['balance'] =  $member['balance'] + $money; //ji updatinu. isideda stringas, tai prieky dar (int) pridedame. "castingas" irasome ko norime
@@ -21,7 +21,7 @@ if (is_numeric($_POST['addMoney'])) {
         }
     }
 }else{
-        $_SESSION['error'] = "Input must be a number";
+        $_SESSION['error'] = "Input must be a number and more than 0";
         header("Location: http://localhost/bank_php/addMoney.php?id=$id");
         exit;
 }

@@ -30,7 +30,7 @@ if (!$_GET['id']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="http://localhost/bank_php/script.js" defer></script>
+    <script src="http://localhost/bank_php/parts/script.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>Add money </title>
 
@@ -55,7 +55,7 @@ if (!$_GET['id']) {
             <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
             <p> <b> Balance: </b> <?= number_format($user['balance'], 3, '.', '')  ?> €.</p>
             <form action="http://localhost/bank_php/update.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
-                <input type="text" pattern="\d+(\.\d+)?" name="addMoney">
+                <input type="text" name="addMoney">
                 <button class="btn btn-outline-success btn-sm" type="submit">Add</button>
             </form>
         </div>

@@ -10,7 +10,7 @@ if (!$id) {
 $members = unserialize(file_get_contents(__DIR__ . '/data/users.ser'));
 $money = ($_POST['withdraw']) > 0 ?  (float)$_POST['withdraw'] : 0;
 
-if (is_numeric($_POST['withdraw'])) {
+if (is_numeric($_POST['withdraw']) && $_POST['addMoney'] >= 0) {
     foreach ($members as $i => $member) {
         if ($member['id'] == $id) {
             if ($member['balance'] >= $money) {
@@ -25,7 +25,7 @@ if (is_numeric($_POST['withdraw'])) {
         }
     }
 } else {
-    $_SESSION['error'] = "Input must be a number";
+    $_SESSION['error'] = "Input must be a number and more than 0";
     header("Location: http://localhost/bank_php/withdraw.php?id=$id");
     exit;
 }

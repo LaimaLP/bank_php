@@ -26,7 +26,8 @@ if ($_GET['id']?? 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-  
+    <script src="http://localhost/bank_php/parts/script.js" defer></script>
+
     <title>Debit </title>
 </head>
 
@@ -52,7 +53,7 @@ if ($_GET['id']?? 0) {
             <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
             <p> <b> Saskaitos likutis: </b> <?= number_format($user['balance'], 3, '.', '') ?> €.</p>
             <form action="http://localhost/bank_php/updateDebit.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
-                <input type="text" pattern="\d+(\.\d+)?" name="withdraw">
+                <input type="text"  name="withdraw">
                 <button class="btn btn-outline-info btn-sm" type="submit">Debit money</button>
             </form>
         </div>
