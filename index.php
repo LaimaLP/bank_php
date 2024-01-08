@@ -7,6 +7,7 @@ require __DIR__ . '../functions.php';
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -17,7 +18,6 @@ require __DIR__ . '../functions.php';
 <body>
     <?php require __DIR__ . '../parts/menu.php' ?>
     <?php require __DIR__ . '../parts/msg.php' ?>
-
 
     <div class="container mt-5">
         <div class="row">
@@ -76,7 +76,7 @@ require __DIR__ . '../functions.php';
                         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'logIn') : ?>
 
                             <div class="col-2">
-                                <?= number_format($member['balance'], 3, '.', '') ?> €
+                                <?= number_format($member['balance'], 2, '.', '') ?> €
                             </div>
                             <div class="col-3">
                                 <!-- mygtukai nuorodos i action atvaizdavimo puslapius, per query (get metodu) perduodama memberio info (id) -->

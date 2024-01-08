@@ -10,7 +10,8 @@ if (!$id) {
 
 $members = unserialize(file_get_contents(__DIR__ . '/data/users.ser'));
 
-$money = ($_POST['addMoney']) > 0 ?  (float)$_POST['addMoney'] : 0;
+$money = ($_POST['addMoney']) > 0 ?  number_format((float)$_POST['addMoney'], 2, '.', '') : 0;
+
 
 if (is_numeric($_POST['addMoney']) && $_POST['addMoney']>=0 ) {
     foreach ($members as $i => $member) {

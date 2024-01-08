@@ -53,7 +53,7 @@ if (!$_GET['id']) {
             <h1>Add funds </h1>
             <p> <b>Name: </b> <?= $user['name'] ?> </p>
             <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
-            <p> <b> Balance: </b> <?= number_format($user['balance'], 3, '.', '')  ?> €.</p>
+            <p> <b> Balance: </b> <?= number_format($user['balance'], 2, '.', '')  ?> €.</p>
             <form action="http://localhost/bank_php/update.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
                 <input type="text" name="addMoney">
                 <button class="btn btn-outline-success btn-sm" type="submit">Add</button>

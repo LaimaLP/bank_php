@@ -51,7 +51,7 @@ if ($_GET['id']?? 0) {
             <h1>Withdraw funds</h1>
             <p> <b>Name: </b> <?= $user['name'] ?> </p>
             <p> <b>Last Name: </b> <?= $user['lastname'] ?> </p>
-            <p> <b> Saskaitos likutis: </b> <?= number_format($user['balance'], 3, '.', '') ?> €.</p>
+            <p> <b> Saskaitos likutis: </b> <?= number_format($user['balance'], 2, '.', '') ?> €.</p>
             <form action="http://localhost/bank_php/updateDebit.php?id=<?= $_GET['id'] ?? 0 ?>" method="post">
                 <input type="text"  name="withdraw">
                 <button class="btn btn-outline-info btn-sm" type="submit">Debit money</button>
