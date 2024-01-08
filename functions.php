@@ -18,6 +18,7 @@ function personalCodeValidation($personalCode)
     $dienaDigit = substr($pc, 5, 2);
     if (
         strlen($pc) > 11 ||
+        strlen($pc) < 11 ||
         $pirmasDigit < 2 || $pirmasDigit > 6 ||
         $menuoDigit > 12 ||
         $dienaDigit > 31
